@@ -1,14 +1,18 @@
 <?php
 // Laad de composer autoloader in
 
+require './vendor/autoload.php';
+
+use Zxing\QrReader;
+
 // Lees de documentatie van de khanamiryan/qrcode-detector-decoder package:
 // Zo weet je hoe je deze package kunt gebruiken
 // https://github.com/khanamiryan/php-qrcode-detector-decoder/
 
-// Lees de QR code die je net hebt gemaakt
-// Het bestand moet eerst naar PNG omgezet worden, dat gebeurt hier
-// Deze code krijg je van mij en kun je laten staan.
+$qrcode = new QrReader('./qrcode.png');
+$text = $qrcode->text(); //return decoded text from QR Code
 
+echo "\nAR CODE = " . $text . "\n\n";
 
 // Je hebt NU dus een "qrcode.png" die je kunt inladen
 
